@@ -1,0 +1,18 @@
+.dashboard-container {
+  padding: 30px;
+
+  .name {
+    font-size: 20px;
+  }
+
+  .strategy-container {
+    height: calc(100vh - 230px);
+    width: 100%;
+
+    .section-card {
+      height: 150px;
+      width: 300px;
+
+    }
+  }
+}
