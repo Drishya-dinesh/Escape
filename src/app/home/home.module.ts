@@ -19,9 +19,7 @@ import { HelpmateDetailsComponent } from './helpmate-details/helpmate-details.co
         HeaderModule,
         FormsModule,
         AgmCoreModule,
-        AgmCoreModule.forRoot({
-            // apiKey: 'AIzaSyAQdcrqCEeP7MC_EiGCGAM7r62CtI8tw4Y'
-        })
+        AgmCoreModule.forRoot({})
     ]
 })
 export class HomeModule {
