@@ -1,82 +1,97 @@
 .login-container {
-    width: 100vw;
-    height: 100vh;
-    background-color: #2b7272;
-    padding: 30px;
-    overflow: auto;
-    .login-card {
-        height: 450px;
-        width: 450px;
-        background-color: #fff;
-        .logo-section {
-            img {
-                height: 20px;
-                margin-right: 10px;
-            }
-            span {
-                font-weight: 600;
-                font-size: 18px;
-            }
-        }
-        .login-label {
-            font-size: 20px;
-            margin-top: 30px;
-        }
-        .input-filed {
-            margin-top: 15px;
-            input {
-                height: 50px;
-                margin-bottom: 20px;
-            }
-            button {
-                height: 50px;
-            }
-        }
+  width: 100vw;
+  height: 100vh;
+  background-color: #2b7272;
+  padding: 30px;
+  overflow: auto;
+
+  .login-card {
+    height: 450px;
+    width: 450px;
+    background-color: #fff;
+
+    .logo-section {
+      img {
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 18px;
+      }
     }
-    .register-card {
-        height: 640px;
-        width: 450px;
-        background-color: #fff;
-        .logo-section {
-            img {
-                height: 20px;
-                margin-right: 10px;
-            }
-            span {
-                font-weight: 600;
-                font-size: 18px;
-            }
-        }
-        .login-label {
-            font-size: 20px;
-            margin-top: 30px;
-        }
-        .input-filed {
-            margin-top: 15px;
-            input {
-                height: 50px;
-                margin-bottom: 20px;
-            }
-            button {
-                height: 50px;
-            }
-        }
+
+    .login-label {
+      font-size: 20px;
+      margin-top: 30px;
     }
+
+    .input-filed {
+      margin-top: 15px;
+
+      input {
+        height: 50px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        height: 50px;
+      }
+    }
+  }
+
+  .register-card {
+    height: 640px;
+    width: 450px;
+    background-color: #fff;
+
+    .logo-section {
+      img {
+        height: 20px;
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+    .login-label {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    .input-filed {
+      margin-top: 15px;
+
+      input {
+        height: 50px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        height: 50px;
+      }
+    }
+  }
 }
 
 input.error {
-    border-color: #ff3333;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem #fda7a7;
+  border-color: #ff3333;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #fda7a7;
 }
 
 .reg-input-group {
-    position: relative;
-    img {
-        position: absolute;
-        top: 14px;
-        right: 10px;
-        height: 20px;
-        cursor: pointer;
-    }
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    height: 20px;
+    cursor: pointer;
+  }
 }

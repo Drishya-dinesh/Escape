@@ -1,0 +1,89 @@
+<ng-template #detailsModal let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Helpmate Information</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-4 p-0 user basic-details-card">
+                    <div class="user-details">
+                        <div class="picture-container d-flex flex-column align-items-center">
+                            <img class="profile-picture" src="assets/images/users/john.png">
+                            <div class="name">{{mateDetails.firstName}} {{mateDetails.lastName}}</div>
+                            <div class="font-italic distance">({{mateDetails.distance}}&nbsp;Meters away)</div>
+                        </div>
+                        <div>
+                            <div class="label-value">
+                                <div class="label">Place:</div>
+                                <div class="value">&nbsp;{{mateDetails.location}}</div>
+                            </div>
+                            <div class="label-value">
+                                <div class="label">Phone:</div>
+                                <div class="value">&nbsp;{{mateDetails.phone}}</div>
+                            </div>
+                            <div class="label-value">
+                                <div class="label">E-Mail:</div>
+                                <div class="value">&nbsp;{{mateDetails.email}}</div>
+                            </div>
+                        </div>
+                        <div class="mate-contact d-flex justify-content-between px-5 py-1 mt-4">
+                            <a href="tel:+91974702347">
+                                <div class="icon-div" title="Phone">
+                                    <img src="assets/images/phone.svg">
+                                </div>
+                            </a>
+                            <a href="sms:+91974702347&body=sampleMessege">
+                                <div class="icon-div" title="Message">
+                                    <img src="assets/images/messages.svg">
+                                </div>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=+919747023547&text=sample">
+                                <div class="icon-div" title="Whatsapp">
+                                    <img src="assets/images/whatsapp.svg">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-7 ml-2 user-mate-map">
+                    <div class="user-mate-map">
+                        <div class="map-container" *ngIf="userDetails&&mateDetails">
+                            <agm-map
+                                    [latitude]="userDetails.lat"
+                                    [longitude]="userDetails.lng"
+                                    [zoom]="16">
+                                <agm-marker
+                                        [latitude]="userDetails.lat"
+                                        [longitude]="userDetails.lng"
+                                        [label]="userDetails.firstName">
+                                </agm-marker>
+                                <agm-marker
+                                        [latitude]="mateDetails.lat"
+                                        [longitude]="mateDetails.lng"
+                                        [label]="mateDetails.firstName"
+                                        animation="BOUNCE">
+                                </agm-marker>
+                                <agm-polyline [visible]="true" [strokeWeight]="3" [strokeColor]="'#07b57a'">
+                                    <agm-polyline-point
+                                            [latitude]="userDetails.lat"
+                                            [longitude]="userDetails.lng">
+                                    </agm-polyline-point>
+                                    <agm-polyline-point
+                                            [latitude]="mateDetails.lat"
+                                            [longitude]="mateDetails.lng">
+                                    </agm-polyline-point>
+                                </agm-polyline>
+                            </agm-map>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
+    </div>
+</ng-template>

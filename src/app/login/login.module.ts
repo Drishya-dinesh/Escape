@@ -7,13 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule, NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [LoginComponent],
-  imports: [
-    CommonModule,
-    LoginRoutingModule,
-    FormsModule,
-    NgbModule,
-    NgbPopoverModule,
-  ],
+    declarations: [LoginComponent],
+    imports: [
+        CommonModule,
+        LoginRoutingModule,
+        FormsModule,
+        NgbModule,
+        NgbPopoverModule,
+    ],
 })
-export class LoginModule {}
+export class LoginModule {
+}

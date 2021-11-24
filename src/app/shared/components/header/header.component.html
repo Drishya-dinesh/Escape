@@ -25,7 +25,8 @@
             <ul class="nav">
                 <ng-container *ngFor="let menu of menuItems; let _i = index">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" [ngClass]="{'active': isActiveRoute(menu.route)}" (click)="navigateToRoute(menu.route,_i)">{{menu.text}}</a>
+                        <a class="nav-link" href="javascript:void(0)" [ngClass]="{'active': isActiveRoute(menu.route)}"
+                           (click)="navigateToRoute(menu.route,_i)">{{menu.text}}</a>
                     </li>
                 </ng-container>
             </ul>
