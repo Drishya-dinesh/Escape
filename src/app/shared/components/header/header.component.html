@@ -14,7 +14,7 @@
         </div>
         <img alt="" class="user-icon" src="assets/icons/user.svg">
       </div>
-      <div class="help-section d-flex align-items-center h-100 ml-2 pl-2">
+      <div (click)="onHelpClick()" class="help-section d-flex align-items-center h-100 ml-2 pl-2">
         <img alt="" class="help-icon mr-1" src="assets/icons/help-icon.svg">
         <p class="mb-0 help-text">Help</p>
       </div>
@@ -33,3 +33,5 @@
   <!--        </div>-->
   <!--    </div>-->
 </div>
+
+<app-help *ngIf="showHelp" (close)="onHelpClose()"></app-help>

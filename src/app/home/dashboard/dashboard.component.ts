@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
       phone: '+1 453 553 333',
       lat: 43.766966,
       lng: -79.262134,
-      img: 'john.png',
+      img: 'john.jpg',
       distance: 0
     },
     {
@@ -31,9 +31,9 @@ export class DashboardComponent implements OnInit {
       email: 'sample@mail.com',
       location: 'Scarborough',
       phone: '+1 453 553 333',
-      lat: 43.769923,
-      lng: -79.261415,
-      img: 'john.png',
+      lat: 43.767176,
+      lng: -79.266432,
+      img: 'joey.jpg',
       distance: 0
     },
     {
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
       phone: '+1 453 553 333',
       lat: 43.765236,
       lng: -79.259578,
-      img: 'john.png',
+      img: 'edward.jpg',
       distance: 0
     },
     {
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
       phone: '+1 453 553 333',
       lat: 43.769844,
       lng: -79.256570,
-      img: 'john.png',
+      img: 'gurleen.jpg',
       distance: 0
     },
     {
@@ -67,9 +67,9 @@ export class DashboardComponent implements OnInit {
       email: 'sample@mail.com',
       location: 'Scarborough',
       phone: '+1 453 553 333',
-      lat: 43.767176,
-      lng: -79.266432,
-      img: 'john.png',
+      lat: 43.769923,
+      lng: -79.261415,
+      img: 'jean.jpg',
       distance: 0
     },
     {
@@ -81,7 +81,7 @@ export class DashboardComponent implements OnInit {
       phone: '+1 453 553 333',
       lat: 43.768513,
       lng: -79.257142,
-      img: 'john.png',
+      img: 'carol.jpg',
       distance: 0
     },
     {
@@ -93,7 +93,7 @@ export class DashboardComponent implements OnInit {
       phone: '+1 453 553 333',
       lat: 43.769346,
       lng: -79.264673,
-      img: 'john.png',
+      img: 'anu.jpg',
       distance: 0
     }
   ];
@@ -112,6 +112,8 @@ export class DashboardComponent implements OnInit {
   };
 
   showDetailsModal = false;
+
+  showConfirmationModal = false;
 
   helpMateMarker: any = {
     url: 'assets/icons/marker.svg',
@@ -201,5 +203,13 @@ export class DashboardComponent implements OnInit {
 
   onDetailsModalClose() {
     this.showDetailsModal = false;
+  }
+
+  onConfirmationModalClose() {
+    this.showConfirmationModal = false;
+  }
+
+  onPanicButtonClick() {
+    this.showConfirmationModal = true;
   }
 }

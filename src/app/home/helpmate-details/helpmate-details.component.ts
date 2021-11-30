@@ -35,8 +35,6 @@ export class HelpmateDetailsComponent implements AfterViewInit {
     labelOrigin: {x: 15, y: 40}
   }
 
-  showMap = false;
-
   center = {
     lat: 0,
     lng: 0
@@ -53,7 +51,6 @@ export class HelpmateDetailsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.center = this.midpoint(this.mateDetails.lat, this.mateDetails.lng, this.userDetails.lat, this.userDetails.lng);
-    this.showMap = true;
     const modalRef = this.modalService.open(this.detailsModal, {size: 'lg'});
     modalRef.result.then((data) => {
       this.onDetailsModalClose.emit();

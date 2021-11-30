@@ -6,13 +6,13 @@
       </div>
       <span>{{constants.PANIC_MESSAGE}}</span>
     </div>
-    <button class="btn btn-danger">I AM PANIC</button>
+    <button class="btn btn-danger" (click)="onPanicButtonClick()">I am Panic</button>
   </div>
   <div class="container-fluid">
     <div class="row main-container">
       <div class="col-lg-4 col-md-12 col-sm-12 help-mate-container">
         <div class="header">
-          Helpmates Near You
+          Helpmates Near Me
           <img src="assets/icons/helpers.svg">
         </div>
         <div class="scroll-mates">
@@ -82,3 +82,7 @@
                       [mateDetails]="selectedMate"
                       [userDetails]="userDetails">
 </app-helpmate-details>
+
+<app-confirmation *ngIf="showConfirmationModal"
+(close)="onConfirmationModalClose()">
+</app-confirmation>

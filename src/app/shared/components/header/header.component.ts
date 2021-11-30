@@ -12,6 +12,8 @@ export class HeaderComponent implements OnInit {
     {text: 'Dashboard', route: '/dashboard'}
   ];
 
+  showHelp: boolean = false;
+
   constructor(public constants: AppConstantsService, private router: Router) {
   }
 
@@ -23,5 +25,13 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateToRoute(route: string, _i: number) {
+  }
+
+  onHelpClick() {
+    this.showHelp = true;
+  }
+
+  onHelpClose() {
+    this.showHelp = false;
   }
 }

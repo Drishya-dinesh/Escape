@@ -55,15 +55,17 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // if (JSON.parse(localStorage.getItem('isLoggedIn') || '')) {
-    //   this.router.navigate(['home']);
-    // }
+    if (JSON.parse(sessionStorage.getItem('isLoggedIn') || '')) {
+      this.router.navigate(['home']);
+    }
   }
 
   login() {
-    // localStorage.setItem('isLoggedIn', 'true');
-    this.router.navigate(['home']);
-    // this.loginErrorMessage = this.validateLogin().message;
+    this.loginErrorMessage = this.validateLogin().message;
+    if (!this.loginErrorMessage) {
+      sessionStorage.setItem('isLoggedIn', 'true');
+      this.router.navigate(['home']);
+    }
   }
 
   register() {
