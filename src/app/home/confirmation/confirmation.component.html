@@ -1,0 +1,32 @@
+<ng-template #confirmation let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Send Emergency Notification</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="c('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ng-container *ngIf="!showLoader">
+      <p><strong>Are you sure you want to send <span class="text-danger">"Emergency Notifications"</span> to
+        everyone?</strong></p>
+      <p>An emergency notification message with your location will be send to the helpmates near by you.
+      </p>
+    </ng-container>
+    <ng-container *ngIf="showLoader">
+      <div class="d-flex align-items-center loader">
+        <img src="assets/images/loader.gif">
+        <div class="message">
+          An emergency notification being send to the helpmates near you, <br>
+          <span class="text-primary text-bold">Don't be Panic.</span>
+          Someone will reach you out soon.
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="!showLoader" type="button" class="btn btn-outline-secondary" (click)="c('cancel click')">Cancel
+    </button>
+    <button type="button" class="btn btn-danger"
+            (click)="proceedClick()">{{showLoader ? 'Ok' : 'Yes, Proceed'}}</button>
+  </div>
+</ng-template>

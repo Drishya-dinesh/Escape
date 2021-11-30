@@ -1,0 +1,88 @@
+<div class="dashboard-container">
+  <div class="panic-container d-flex justify-content-between align-items-center">
+    <div class="message d-flex align-items-center">
+      <div class="attention-icon">
+        <img src="assets/icons/danger.svg">
+      </div>
+      <span>{{constants.PANIC_MESSAGE}}</span>
+    </div>
+    <button class="btn btn-danger" (click)="onPanicButtonClick()">I am Panic</button>
+  </div>
+  <div class="container-fluid">
+    <div class="row main-container">
+      <div class="col-lg-4 col-md-12 col-sm-12 help-mate-container">
+        <div class="header">
+          Helpmates Near Me
+          <img src="assets/icons/helpers.svg">
+        </div>
+        <div class="scroll-mates">
+          <ng-container *ngFor="let mate of helpMates">
+            <div (click)="onMateSelect(mate)"
+                 class="help-mate-card d-flex justify-content-between align-items-center">
+              <div class="d-flex">
+                <img class="user-image" src="assets/images/users/{{mate.img}}">
+                <div class="details">
+                  <div class="name">{{mate.firstName}}&nbsp;{{mate.lastName}}
+                    <span class="distance">
+                                            ({{mate.distance}} Meters Away)
+                                        </span>
+                  </div>
+                  <div class="info">{{mate.location}}&nbsp;|&nbsp;{{mate.phone}}</div>
+                </div>
+              </div>
+<!--              <div class="notify">-->
+<!--                <button class="btn btn-warning">-->
+<!--                  <div class="d-flex align-items-center">-->
+<!--                    Notify-->
+<!--                  </div>-->
+<!--                </button>-->
+<!--              </div>-->
+            </div>
+
+          </ng-container>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12 pr-0">
+        <div class="map-container">
+          <agm-map
+            [latitude]="userDetails.lat"
+            [longitude]="userDetails.lng"
+            [zoom]="15">
+            <agm-marker
+              [latitude]="userDetails.lat"
+              [longitude]="userDetails.lng"
+              [iconUrl]="myMarker"
+              [label]="'You'">
+            </agm-marker>
+            <agm-circle
+              [fillOpacity]="0.3"
+              [latitude]="userDetails.lat"
+              [longitude]="userDetails.lng"
+              [radius]="helpMates[helpMates.length-1].distance+50"
+              fillColor="#79c9ff">
+            </agm-circle>
+            <ng-container *ngFor="let mate of helpMates">
+              <agm-marker
+                [iconUrl]="helpMateMarker"
+                [label]="mate.firstName"
+                [latitude]="mate.lat"
+                [longitude]="mate.lng"
+                animation="BOUNCE"
+              ></agm-marker>
+            </ng-container>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-helpmate-details (onDetailsModalClose)="onDetailsModalClose()"
+                      *ngIf="showDetailsModal"
+                      [mateDetails]="selectedMate"
+                      [userDetails]="userDetails">
+</app-helpmate-details>
+
+<app-confirmation *ngIf="showConfirmationModal"
+(close)="onConfirmationModalClose()">
+</app-confirmation>

@@ -1,0 +1,127 @@
+::ng-deep {
+  .modal-dialog {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .modal-header {
+    border: none;
+  }
+
+  .modal-footer {
+    //border: none;
+  }
+}
+
+.basic-details-card {
+  .header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .user-details {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: relative;
+    padding: 140px 10px 10px;
+    margin-top: 60px;
+
+    .picture-container {
+      position: absolute;
+      width: 100%;
+      display: flex !important;
+      justify-content: center;
+      top: -25%;
+    }
+
+    .profile-picture {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid #2b7272;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .name {
+      padding-top: 10px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .distance {
+      font-size: 16px;
+      line-height: 10px;
+    }
+
+    .label-value {
+      display: flex;
+      font-size: 18px;
+      margin-bottom: 10px;
+
+      .label {
+
+      }
+
+      .value {
+        font-weight: 600;
+      }
+    }
+
+    .mate-contact {
+
+      img {
+        height: 40px;
+      }
+
+      .icon-div {
+        padding: 6px;
+        border: 2px solid #4fce5d;
+        border-radius: 50%;
+        cursor: pointer;
+        animation: blinkingText 2s infinite;
+      }
+
+      .icon-div:hover {
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+    }
+  }
+}
+
+.user-mate-map {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  .map-container {
+    height: calc(100vh - 230px);
+    width: 100%;
+  }
+}
+
+@keyframes blinkingText {
+  0% {
+    background-color: #FFFFFF;
+  }
+  25% {
+    background-color: #878787;
+  }
+  50% {
+    background-color: #000000;
+  }
+  75% {
+    background-color: #878787;
+  }
+  100% {
+    background-color: #FFFFFF;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .user-mate-map {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    margin-top: 10px;
+  }
+}

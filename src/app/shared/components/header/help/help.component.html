@@ -1,0 +1,14 @@
+<ng-template #help let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Escape Plan</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="c('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Help details goes here.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="d('close')">Ok</button>
+  </div>
+</ng-template>
