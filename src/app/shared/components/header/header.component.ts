@@ -34,4 +34,9 @@ export class HeaderComponent implements OnInit {
   onHelpClose() {
     this.showHelp = false;
   }
+
+  logout() {
+    sessionStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/login']);
+  }
 }
