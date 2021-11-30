@@ -13,7 +13,7 @@
     .logo {
       height: 39px;
       width: 42px;
-      margin-right: 15px;
+      //margin-right: 15px;
     }
 
     h4 {
@@ -107,6 +107,15 @@
     .active {
       border-bottom: 4px solid #ed8b00;
       font-weight: bold;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .header-container {
+    .top-section {
+      padding: 0.4rem;
     }
   }
 }

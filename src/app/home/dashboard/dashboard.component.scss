@@ -110,9 +110,32 @@
     height: 100%;
     width: 100%;
   }
+
+  .gm-style div[aria-hidden="true"] {
+    -webkit-text-stroke: 0.2px black;
+    -webkit-text-fill-color: white;
+  }
 }
 
 .scroll-mates {
   overflow: auto;
   height: calc(100vh - 275px);
+}
+
+@media only screen and (max-width: 1024px) {
+  .dashboard-container {
+    padding: 8px 2px;
+
+    .col-sm-12 {
+      padding-left: 0;
+    }
+
+    .main-container {
+      .help-mate-container {
+        .help-mate-card {
+          //padding: 10px;
+        }
+      }
+    }
+  }
 }

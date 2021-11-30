@@ -1,35 +1,35 @@
 <div class="header-container">
-    <div class="top-section d-flex justify-content-between">
-        <div class="d-flex align-items-center">
-            <img src="assets/icons/app-logo-white.svg" class="logo" alt="logo">
-            <h4 class="mb-0">
-                {{constants.APPLICATION_NAME}}
-            </h4>
-        </div>
-        <div class="d-flex align-items-center">
-            <div class="user-info d-flex align-items-center mr-2">
-                <div class="mr-3">
-                    <p class="welcome-text mb-0">Welcome</p>
-                    <p class="user-name mb-0 font-weight-bold">{{constants.FIRST_NAME}}</p>
-                </div>
-                <img src="assets/icons/user.svg" class="user-icon" alt="">
-            </div>
-            <div class="help-section d-flex align-items-center h-100 ml-2 pl-2">
-                <img src="assets/icons/help-icon.svg" class="help-icon mr-1" alt="">
-                <p class="mb-0 help-text">Help</p>
-            </div>
-        </div>
+  <div class="top-section d-flex justify-content-between">
+    <div class="d-flex align-items-center">
+      <img alt="logo" class="logo" src="assets/icons/app-logo-white.svg">
+      <h4 class="mb-0">
+        {{constants.APPLICATION_NAME}}
+      </h4>
     </div>
-    <div class="nav-section">
-        <div class="nav-container">
-            <ul class="nav">
-                <ng-container *ngFor="let menu of menuItems; let _i = index">
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)" [ngClass]="{'active': isActiveRoute(menu.route)}"
-                           (click)="navigateToRoute(menu.route,_i)">{{menu.text}}</a>
-                    </li>
-                </ng-container>
-            </ul>
+    <div class="d-flex align-items-center">
+      <div class="user-info d-flex align-items-center mr-2">
+        <div class="mr-2">
+          <p class="welcome-text mb-0">Welcome</p>
+          <p class="user-name mb-0 font-weight-bold">{{constants.FIRST_NAME}}</p>
         </div>
+        <img alt="" class="user-icon" src="assets/icons/user.svg">
+      </div>
+      <div class="help-section d-flex align-items-center h-100 ml-2 pl-2">
+        <img alt="" class="help-icon mr-1" src="assets/icons/help-icon.svg">
+        <p class="mb-0 help-text">Help</p>
+      </div>
     </div>
+  </div>
+  <!--    <div class="nav-section">-->
+  <!--        <div class="nav-container">-->
+  <!--            <ul class="nav">-->
+  <!--                <ng-container *ngFor="let menu of menuItems; let _i = index">-->
+  <!--                    <li class="nav-item">-->
+  <!--                        <a class="nav-link" href="javascript:void(0)" [ngClass]="{'active': isActiveRoute(menu.route)}"-->
+  <!--                           (click)="navigateToRoute(menu.route,_i)">{{menu.text}}</a>-->
+  <!--                    </li>-->
+  <!--                </ng-container>-->
+  <!--            </ul>-->
+  <!--        </div>-->
+  <!--    </div>-->
 </div>
