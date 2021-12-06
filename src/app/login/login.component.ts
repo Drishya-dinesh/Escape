@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {AppConstantsService} from '../shared/constants/app-constants.service';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AppConstantsService } from '../shared/constants/app-constants.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +10,8 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   staticCreds = [
     {
-      email: '2',
-      password: '2',
+      email: 'drishyadinesh83@gmail.com',
+      password: '12345678',
     },
     {
       email: '1',
@@ -48,14 +48,14 @@ export class LoginComponent implements OnInit {
       value: '',
       errorMessage: '',
     },
-    errorFlag: false
+    errorFlag: false,
   };
 
-  constructor(public constants: AppConstantsService, private router: Router) {
-  }
+  constructor(public constants: AppConstantsService, private router: Router) {}
 
   ngOnInit(): void {
-    if (JSON.parse(sessionStorage.getItem('isLoggedIn') || '')) {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    if (isLoggedIn && JSON.parse(isLoggedIn || '')) {
       this.router.navigate(['home']);
     }
   }
@@ -72,6 +72,7 @@ export class LoginComponent implements OnInit {
     // this.pageType = 'login';
     this.validateRegister();
     if (!this.registerObject.errorFlag) {
+      sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['home']);
     }
   }
@@ -125,7 +126,6 @@ export class LoginComponent implements OnInit {
       this.registerObject.fullName.errorMessage =
         'Please enter your full name.';
       this.registerObject.errorFlag = true;
-
     } else {
       this.registerObject.fullName.errorMessage = '';
     }
@@ -155,7 +155,6 @@ export class LoginComponent implements OnInit {
     } else if (this.registerObject.password.value.length === 0) {
       this.registerObject.password.errorMessage = 'Please enter password';
       this.registerObject.errorFlag = true;
-
     } else {
       this.registerObject.password.errorMessage = '';
       this.registerObject.errorFlag = false;
@@ -164,11 +163,10 @@ export class LoginComponent implements OnInit {
       this.registerObject.confirmPassword.errorMessage =
         'Please enter password';
       this.registerObject.errorFlag = true;
-
     } else if (
       !this.registerObject.password.errorMessage &&
       this.registerObject.password.value !==
-      this.registerObject.confirmPassword.value
+        this.registerObject.confirmPassword.value
     ) {
       this.registerObject.confirmPassword.errorMessage = 'Password mismatch';
       this.registerObject.errorFlag = true;

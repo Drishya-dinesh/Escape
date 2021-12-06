@@ -1,14 +1,22 @@
 <ng-template #help let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-title">Escape Plan</h4>
-    <button type="button" class="close" aria-describedby="modal-title" (click)="c('Cross click')">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Escape Plan</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="c('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
-    Help details goes here.
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="d('close')">Ok</button>
-  </div>
+    </div>
+    <div class="modal-body">
+        <div>
+            <h2>How Escape Plan works:</h2>
+        </div>
+        <div>
+            Escape Plan is a working prototype intend to connect people around a distance if the user needs emergency help. Anyone can register and login to the platform to view and communicate with immediate users around 500 meters.All you need to register with
+            your First Name with email and phone number and provide a password for login credentials. Home page includes the help mates around your location given in a map right below the contact list. Click on any contacts and their details are given
+            along their contact email, whatsapp, phone number and sms services. you can easily access helpmates by just clicking on them. Although a panic button is given at the top of the screen to access the nearest possible users in case of emergency.
+            feel free to be a part of us. we are here to help you.
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="d('close')">Ok</button>
+    </div>
 </ng-template>

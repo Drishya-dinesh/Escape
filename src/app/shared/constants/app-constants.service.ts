@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +8,7 @@ export class AppConstantsService {
   public USER_NAME = 'Drishya Dinesh';
   public FIRST_NAME = 'Drishya';
   public LAST_NAME = 'Dinesh';
-  public PANIC_MESSAGE = 'Panic message goes here.'
+  public PANIC_MESSAGE = 'Need help ? Hang on !! we are just a button away';
 
-  constructor() {
-  }
+  constructor() {}
 }
