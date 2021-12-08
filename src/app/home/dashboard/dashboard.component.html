@@ -4,9 +4,18 @@
             <div class="attention-icon">
                 <img src="assets/icons/danger.svg">
             </div>
-            <span>{{constants.PANIC_MESSAGE}}</span>
+            <span style="white-space: pre">{{constants.PANIC_MESSAGE}}</span>
         </div>
-        <button class="btn btn-danger" (click)="onPanicButtonClick()">I am Panic</button>
+        <button class="btn btn-danger" style="margin-left: 10px" (click)="onPanicButtonClick()">I am Panic</button>
+    </div>
+    <div class="panic-container emergency-container  d-flex justify-content-between align-items-center">
+       <div class="message d-flex align-items-center">
+            <div class="attention-icon">
+                <img src="assets/images/emergency-call.png">
+            </div>
+              <span style="white-space: pre">This will help you to <br> connect with Authorities</span>
+        </div>
+        <button class="btn btn-danger" style="margin-left: 10px" (click)="onPanicButtonClick()">Call 911</button>
     </div>
     <div class="container-fluid">
         <div class="row main-container">
@@ -26,7 +35,7 @@
                                             ({{mate.distance}} Meters Away)
                                         </span>
                                     </div>
-                                    <div class="info">{{mate.location}}&nbsp;|&nbsp;{{mate.phone}}</div>
+                                    <div class="info">{{mate.location}}<br><span style="font-weight:600">{{mate.phone}}</span></div>
                                 </div>
                             </div>
                         </div>

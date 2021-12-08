@@ -10,18 +10,18 @@ export class DashboardComponent implements OnInit {
   isLocationFetched = false;
 
   helpMates = [
-    {
-      mateId: '1',
-      firstName: '911',
-      lastName: '',
-      email: 'email 33 division',
-      location: '50 Upjohn Rd., Toronto, ON , M3B 2W1',
-      phone: '911',
-      lat: 43.766966,
-      lng: -79.262134,
-      img: '911.jpg',
-      distance: 0,
-    },
+    // {
+    //   mateId: '1',
+    //   firstName: '911',
+    //   lastName: '',
+    //   email: 'email 33 division',
+    //   location: '50 Upjohn Rd., Toronto, ON , M3B 2W1',
+    //   phone: '911',
+    //   lat: 43.769923,
+    //   lng: -79.261415,
+    //   img: '911.jpg',
+    //   distance: 0,
+    // },
     {
       mateId: '2',
       firstName: 'John',
@@ -77,8 +77,8 @@ export class DashboardComponent implements OnInit {
       email: 'crystalclear5590@mail.com',
       location: '20 stonehill crt,scarborough M1W2Y6',
       phone: '+1 453 553 333',
-      lat: 43.769923,
-      lng: -79.261415,
+      lat: 43.766966,
+      lng: -79.262134,
       img: 'jean.jpg',
       distance: 0,
     },
