@@ -216,4 +216,8 @@ export class DashboardComponent implements OnInit {
   onPanicButtonClick() {
     this.showConfirmationModal = true;
   }
+
+  call911(){
+    window.location.href = 'tel:' + 911;
+  }
 }
