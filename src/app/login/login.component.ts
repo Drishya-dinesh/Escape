@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AppConstantsService } from '../shared/constants/app-constants.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AppConstantsService} from '../shared/constants/app-constants.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -51,7 +51,8 @@ export class LoginComponent implements OnInit {
     errorFlag: false,
   };
 
-  constructor(public constants: AppConstantsService, private router: Router) {}
+  constructor(public constants: AppConstantsService, private router: Router) {
+  }
 
   ngOnInit(): void {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
@@ -71,7 +72,14 @@ export class LoginComponent implements OnInit {
   register() {
     // this.pageType = 'login';
     this.validateRegister();
-    if (!this.registerObject.errorFlag) {
+    let validFlag = false;
+    Object.keys(this.registerObject).forEach(item => {
+        // @ts-ignore
+      if(this.registerObject[item]['errorMessage']){
+          validFlag = true;
+        }
+    })
+    if (!validFlag) {
       sessionStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['home']);
     }
@@ -166,13 +174,18 @@ export class LoginComponent implements OnInit {
     } else if (
       !this.registerObject.password.errorMessage &&
       this.registerObject.password.value !==
-        this.registerObject.confirmPassword.value
+      this.registerObject.confirmPassword.value
     ) {
       this.registerObject.confirmPassword.errorMessage = 'Password mismatch';
       this.registerObject.errorFlag = true;
     } else {
       this.registerObject.confirmPassword.errorMessage = '';
       this.registerObject.errorFlag = false;
+    }
+    if (this.registerObject.password.value.length < 8) {
+      this.registerObject.password.errorMessage =
+        'Password should be at least 8 characters';
+      this.registerObject.errorFlag = true;
     }
   }
 }

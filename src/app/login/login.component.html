@@ -37,26 +37,26 @@
         <input [(ngModel)]="registerObject.fullName.value" [ngClass]="{'error':registerObject.fullName.errorMessage}" class="form-control username"
                placeholder="Full Name">
         <img *ngIf="registerObject.fullName.errorMessage" [ngbPopover]="registerObject.fullName.errorMessage"
-             src="assets/icons/info.svg" triggers="mouseenter:mouseleave">
+             src="assets/icons/info.svg">
       </div>
       <div class="reg-input-group">
         <input [(ngModel)]="registerObject.email.value" [ngClass]="{'error':registerObject.email.errorMessage}" class="form-control username"
                placeholder="Email">
         <img *ngIf="registerObject.email.errorMessage" [ngbPopover]="registerObject.email.errorMessage"
-             src="assets/icons/info.svg" triggers="mouseenter:mouseleave">
+             src="assets/icons/info.svg">
       </div>
       <div class="reg-input-group">
         <input [(ngModel)]="registerObject.phone.value" [ngClass]="{'error':registerObject.phone.errorMessage}" class="form-control username"
                placeholder="Phone Number" type="text">
         <img *ngIf="registerObject.phone.errorMessage" [ngbPopover]="registerObject.phone.errorMessage"
-             src="assets/icons/info.svg" triggers="mouseenter:mouseleave">
+             src="assets/icons/info.svg">
       </div>
       <div class="reg-input-group">
         <input [(ngModel)]="registerObject.password.value" [ngClass]="{'error':registerObject.password.errorMessage}" class="form-control password"
                placeholder="Password"
                type="password">
         <img *ngIf="registerObject.password.errorMessage" [ngbPopover]="registerObject.password.errorMessage"
-             src="assets/icons/info.svg" triggers="mouseenter:mouseleave">
+             src="assets/icons/info.svg">
 
       </div>
       <div class="reg-input-group">
@@ -64,7 +64,7 @@
                placeholder="Confirm Password"
                type="password">
         <img *ngIf="registerObject.confirmPassword.errorMessage" [ngbPopover]="registerObject.confirmPassword.errorMessage"
-             src="assets/icons/info.svg" triggers="mouseenter:mouseleave">
+             src="assets/icons/info.svg">
 
       </div>
       <button (click)="register()" class="btn btn-primary w-100">Register</button>
