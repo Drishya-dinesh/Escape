@@ -1,6 +1,6 @@
 .header-container {
   .top-section {
-    background-color: #1b4b6b;
+    background-color: #2b7272;
     // background-image: url("../../../../assets/icons/header-bg-image.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -111,6 +111,15 @@
   }
 }
 
+.logout-content {
+  cursor: pointer;
+
+  img {
+    height: 20px;
+    margin-right: 5px;
+  }
+}
+
 
 @media only screen and (max-width: 1024px) {
   .header-container {
@@ -119,3 +128,4 @@
     }
   }
 }
+
